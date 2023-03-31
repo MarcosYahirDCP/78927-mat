@@ -22,7 +22,7 @@
     <xs:element name="ModificarRequest">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="nombreOld" type="xs:string" />
+                <xs:element name="id" type="xs:int" />
                 <xs:element name="nombreNew" type="xs:string" />
             </xs:sequence>
         </xs:complexType>
@@ -35,9 +35,39 @@
         </xs:complexType>
     </xs:element>
 
+    <xs:element name="PedirUnoRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="PedirUnoResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="respuesta" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
     <xs:element name="PedirRequest">
     </xs:element>
     <xs:element name="PedirResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="respuesta" type="xs:string" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>   
+    
+    <xs:element name="BorrarRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:int" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="BorrarResponse">
         <xs:complexType>
             <xs:sequence>
                 <xs:element name="respuesta" type="xs:string" />
