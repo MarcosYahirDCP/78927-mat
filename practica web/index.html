@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paho-mqtt/1.0.1/mqttws31.js" type="text/javascript"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Chat</p>
+    <textarea id="mensaje"></textarea>
+    <button onclick="enviarMensaje()">submit</button>
+    <br>
+    <label id="Respuesta"> </label>
+    <script src="index.js"></script>
+</body>
+<script>
+    function enviarMensaje(){
+      var mensajeE = document.getElementById("mensaje");
+      message = new Paho.MQTT.Message(mensajeE.value);
+        message.destinationName = "World";
+        client.send(message);
+    }
+</script>
+</html>
